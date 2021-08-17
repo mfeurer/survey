@@ -5,7 +5,8 @@ institutions: []
 repository: https://github.com/automl/auto-sklearn
 license: BSD
 references:
-  - https://papers.nips.cc/paper/5872-efficient-and-robust-automated-machine-learning.pdf
+  - https://papers.neurips.cc/paper/5872-efficient-and-robust-automated-machine-learning.pdf
+  - https://arxiv.org/abs/2007.04074
 cli: no
 gui: no
 http: no
@@ -21,6 +22,7 @@ techniques:
   - trees
   - bayesian
   - kernel_machines
+  - mlp
   - ensembles
 ml_libraries: []
 tasks:
@@ -30,11 +32,15 @@ tasks:
   - feature_selection
   - feature_preprocessing
   - dimensionality_reduction
+  - data_preprocessing
 distillation: no
 meta_learning:
   - warm_start
+  - portfolio
 search_strategies:
   - bayesian
+  - random
+  - hyperband
 search_space:
   hierarchical: yes
   probabilistic: yes
@@ -43,6 +49,8 @@ search_space:
   hyperparameters:
     - continuous
     - discrete
+    - categorical
+    - conditional
   pipelines:
     - fixed
   robust: yes
@@ -52,4 +60,4 @@ portable: no
 computational_resources:
   gpu: no
   tpu: no
-  cluster: no
+  cluster: yes
